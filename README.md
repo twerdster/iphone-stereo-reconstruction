@@ -1,5 +1,11 @@
 # 3D Stereo Reconstruction using iPhones
 
+<p align="center"><img src="assets/project-preview.jpg" alt="Original two-phone stereo reconstruction project figure" width="380"></p>
+
+![Code](https://img.shields.io/badge/code-Objective--C%20%2F%20C%2B%2B-blue)
+![Platform](https://img.shields.io/badge/platform-iOS%205.1-lightgrey)
+![Source](https://img.shields.io/badge/source-pinned%20original%20source-orange)
+
 Block-matching stereo reconstruction using two iPhones mounted together, with video streams synchronized over Bluetooth.
 
 Students: Ron Slossberg, Omer Shaked.
@@ -8,11 +14,13 @@ Supervision: Aaron Wetzler.
 
 ## Status
 
-The [original student repository](https://github.com/ronslos/stereo_vision) is now pinned as the Git submodule [`source/original`](source/original) at revision `69a76767b2ce74f7b580ddb7b81a43fbb1dd346b`. Student headers identify Ron Slossberg and Omer Shaked. Its application includes stereo calibration/rectification, block-matching depth and GameKit/Bluetooth synchronization. This is historical source, not a verified current iOS release.
+The [original student repository](https://github.com/ronslos/stereo_vision) is now pinned as the Git submodule [`source/original`](https://github.com/ronslos/stereo_vision/tree/69a76767b2ce74f7b580ddb7b81a43fbb1dd346b) at revision `69a76767b2ce74f7b580ddb7b81a43fbb1dd346b`. Student headers identify Ron Slossberg and Omer Shaked. Its application includes stereo calibration/rectification, block-matching depth and GameKit/Bluetooth synchronization. This is historical source, not a verified current iOS release.
 
 ## Running
 
 Clone with `git clone --recurse-submodules https://github.com/twerdster/iphone-stereo-reconstruction.git`, or run `git submodule update --init` in an existing clone. The source targets iOS 5.1, with historical OpenCV, isgl3d, PowerVR/Bullet and GameKit APIs. `isgl3d.h` was absent from the inspected checkout. Vendor dependencies retain their own notices and restrictions; linking the original repository is not a new redistribution or license grant. No successful current Xcode build or device run is claimed.
+
+A November 2026 Xcode 16.1 check could list the project. The stock simulator build found no compatible destination. A separate unsigned arm64 target build failed on the missing external `HelloGLKit/tile_floor.png` resource; `isgl3d.h` is also absent from the preserved checkout. These checks used a private native-filesystem copy, changed no original project settings, and did not run the app. They establish concrete restoration blockers, not a successful port.
 
 ## Original code
 
@@ -31,3 +39,5 @@ The [source provenance manifest](source/PROVENANCE.json) records the published p
 
 Original student and third-party attribution will be retained. No new license for original source code is implied by this README. Original authors can open an issue to contribute updates or request corrections or removal of their material.
 
+
+Figure provenance: the original project figure from Aaron Wetzler’s archived website, copied without changing its bytes. It is historical project imagery, not a new validation result.
