@@ -6,38 +6,41 @@
 ![Platform](https://img.shields.io/badge/platform-iOS%205.1-lightgrey)
 ![Source](https://img.shields.io/badge/source-pinned%20original%20source-orange)
 
-Block-matching stereo reconstruction using two iPhones mounted together, with video streams synchronized over Bluetooth.
+This project was designed to reconstruct a scene from stereo image pairs acquired by two iPhones. The recovered application source implements camera calibration, rectification, disparity calculation, a point-cloud calculation and GameKit (`GKSession`) peer coordination. These operations have not been validated on current devices.
 
-Students: Ron Slossberg, Omer Shaked.
+Students: Ron Slossberg, Omer Shaked. Supervision: Aaron Wetzler.
 
-Supervision: Aaron Wetzler.
+*The figure is unchanged historical project imagery; it is not a new reconstruction or compatibility result.*
 
-## Status
+## Source and implementation
 
-The [original student repository](https://github.com/ronslos/stereo_vision) is now pinned as the Git submodule [`source/original`](https://github.com/ronslos/stereo_vision/tree/69a76767b2ce74f7b580ddb7b81a43fbb1dd346b) at revision `69a76767b2ce74f7b580ddb7b81a43fbb1dd346b`. Student headers identify Ron Slossberg and Omer Shaked. Its application includes stereo calibration/rectification, block-matching depth and GameKit/Bluetooth synchronization. This is historical source, not a verified current iOS release.
+The students' [ronslos/stereo_vision](https://github.com/ronslos/stereo_vision) repository is pinned as the `source/original` Git submodule at `69a76767b2ce74f7b580ddb7b81a43fbb1dd346b`. Student headers identify Ron Slossberg and Omer Shaked. The pinned revision and upstream history are unchanged; [provenance](source/PROVENANCE.json) records the source reference.
 
-## Running
+The inspected upstream contains 561 tracked files, including 33 application `.h`/`.m`/`.mm` files. Those are inventory counts, not test counts.
 
-Clone with `git clone --recurse-submodules https://github.com/twerdster/iphone-stereo-reconstruction.git`, or run `git submodule update --init` in an existing clone. The source targets iOS 5.1, with historical OpenCV, isgl3d, PowerVR/Bullet and GameKit APIs. `isgl3d.h` was absent from the inspected checkout. Vendor dependencies retain their own notices and restrictions; linking the original repository is not a new redistribution or license grant. No successful current Xcode build or device run is claimed.
+`stereo_vision/OpenCVCalculations.mm` contains OpenCV stereo calibration, rectification and `StereoBM`/`StereoSGBM` disparity calculation. Its `reconstruct` function converts disparity to an 8-bit display map, applies a median filter, and uses entries of the calibration `Q` matrix to calculate per-pixel XYZ values; the standard OpenCV `reprojectImageTo3D` call is commented out. `SessionManager.mm` coordinates peers using the historical GameKit API. These identify the implemented operations; they do not establish synchronization accuracy, depth accuracy or current device compatibility.
 
-A November 2026 Xcode 16.1 check could list the project. The stock simulator build found no compatible destination. A separate unsigned arm64 target build failed on the missing external `HelloGLKit/tile_floor.png` resource; `isgl3d.h` is also absent from the preserved checkout. These checks used a private native-filesystem copy, changed no original project settings, and did not run the app. They establish concrete restoration blockers, not a successful port.
+## Inspect the project
 
-## Original code
+```sh
+git clone --recurse-submodules https://github.com/twerdster/iphone-stereo-reconstruction.git
+cd iphone-stereo-reconstruction
+```
 
-The exact original public commit is preserved by a Git submodule instead of copying or altering student history. The inspected upstream contains 561 tracked files and 33 application `.h`/`.m`/`.mm` files; its larger vendor tree must be reviewed under the vendors’ terms before reuse. The pin does not imply that every dependency is present or safe to deploy.
+For an existing checkout, run `git submodule update --init --recursive`. Inspect the Xcode project under `source/original/`. It targets iOS 5.1 and references historical OpenCV, isgl3d, PowerVR/Bullet and GameKit APIs. A complete restoration needs compatible dependencies, missing resources, signing and two suitable physical devices. There is no verified current installation procedure.
 
-The [source provenance manifest](source/PROVENANCE.json) records the published paths, hashes and any redactions. Original student/third-party notices remain in place. No blanket license is assigned to recovered work. Future ports belong in `updated/` and must be described and tested as updated implementations.
+## Validation and limitations
+
+The recorded November 2026 check used Xcode 16.1 on a private copy without changing original settings. Xcode could list the project; a stock simulator build found no compatible destination. An unsigned arm64 target build then failed on the absent external `HelloGLKit/tile_floor.png` resource. The checkout also lacks `isgl3d.h`.
+
+These are project-inspection and failed-build results. No successful current app build, device capture, peer synchronization, numerical comparison or reconstruction benchmark has been recorded. Source inspection does not establish metric depth accuracy or validate the disparity scaling used by the manual XYZ calculation. The preserved vendor tree has its own terms and must be reviewed before reuse. The archive contains no updated port or notebook.
+
+## Original code and attribution
+
+Student and third-party notices remain intact, and no blanket license is added. Authors can open an issue to contribute updates, correct attribution or request removal.
 
 ## Links
 
 - [Project entry on Aaron Wetzler's website](https://twerdster.github.io/#3d-stereo-reconstruction-using-iphones)
-
 - [Project page](https://gip.cs.technion.ac.il/last-projects-2012-1.html)
 - [Demo](https://www.youtube.com/watch?v=IxVj-QZ1w6k)
-
-## Attribution and Updates
-
-Original student and third-party attribution will be retained. No new license for original source code is implied by this README. Original authors can open an issue to contribute updates or request corrections or removal of their material.
-
-
-Figure provenance: the original project figure from Aaron Wetzler’s archived website, copied without changing its bytes. It is historical project imagery, not a new validation result.
