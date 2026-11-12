@@ -18,6 +18,9 @@ No runnable source has been published in this repository yet. Platform requireme
 
 - [Project entry on Aaron Wetzler's website](https://twerdster.github.io/#3d-stereo-reconstruction-using-iphones)
 
+- [Project page](https://gip.cs.technion.ac.il/last-projects-2012-1.html)
+- [Demo](https://www.youtube.com/watch?v=IxVj-QZ1w6k)
+
 ## Attribution and Updates
 
 Original student and third-party attribution will be retained. No license for unrecovered source code is implied by this README. Original authors can open an issue to contribute updates or request corrections or removal of their material.
