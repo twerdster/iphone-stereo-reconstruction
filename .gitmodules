@@ -1,0 +1,3 @@
+[submodule "source/original"]
+	path = source/original
+	url = https://github.com/ronslos/stereo_vision.git

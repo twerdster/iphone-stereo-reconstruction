@@ -1,0 +1,12 @@
+{
+  "recovery_date": "2026-11-12",
+  "path": "source/original",
+  "type": "pinned original public Git submodule",
+  "upstream": "https://github.com/ronslos/stereo_vision",
+  "revision": "69a76767b2ce74f7b580ddb7b81a43fbb1dd346b",
+  "modifications": "None; original commit and author history preserved.",
+  "reviewed_app_source_files": 33,
+  "tracked_upstream_files": 561,
+  "build_status": "No successful current build or runtime verification; legacy iOS dependencies incomplete.",
+  "license_note": "Original and third-party notices apply. No new blanket license or vendor redistribution permission is granted."
+}
