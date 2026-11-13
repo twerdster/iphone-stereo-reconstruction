@@ -39,6 +39,8 @@ These are project-inspection and failed-build results. No successful current app
 
 Student and third-party notices remain intact, and no blanket license is added. Authors can open an issue to contribute updates, correct attribution or request removal.
 
+On 2026-11-12, Ron Slossberg permitted Aaron Wetzler to post the project on Aaron Wetzler's website and to use the project code, and welcomed a rewrite for modern hardware. Omer Shaked separately agreed to Aaron Wetzler using the code. No rewrite or successful current-device build has been completed here. These replies do not replace third-party terms or add a repository-wide license.
+
 ## Links
 
 - [Project entry on Aaron Wetzler's website](https://twerdster.github.io/#3d-stereo-reconstruction-using-iphones)
