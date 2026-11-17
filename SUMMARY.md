@@ -1,33 +1,21 @@
 # iphone-stereo-reconstruction: maintenance context
 
-Read this file first, then SKILL.md and README.md. This context describes the repository as of 2026-11-13.
+Read this file, then SKILL.md, README.md and linked recovery/provenance records. Current update: 17 November 2026.
 
-## Purpose and current source
+This two-phone iOS project implemented stereo calibration, rectification, disparity calculation and a manual Q-matrix point-cloud calculation, with GameKit peer coordination.
 
-Two-phone stereo calibration/rectification, StereoBM/StereoSGBM disparity and manual Q-matrix XYZ calculation, with historical GameKit (GKSession) peer coordination.
+## Original material
 
-source/original pins ronslos/stereo_vision at 69a76767b2ce74f7b580ddb7b81a43fbb1dd346b. OpenCVCalculations.mm contains stereoCalibrate, stereoRectify, StereoBM/StereoSGBM and a manual Q-based XYZ loop after 8-bit disparity conversion/median filtering; SessionManager.mm uses GKSession. Upstream and vendor notices are unchanged.
+The original source remains pinned at 69a76767b2ce74f7b580ddb7b81a43fbb1dd346b. A current build is blocked by missing resources and legacy dependencies; no device or depth-accuracy result is recorded. Original source, submodule pins, images, reports, slides, notices and author-response records are unchanged. [Historical implementation and recovery notes](docs/RECOVERY.md) retain the earlier setup and failed-build evidence; existing PROVENANCE.md or source/PROVENANCE.json remains authoritative where present.
 
-## Use and validation
+## Updated demo
 
-Clone with --recurse-submodules or git submodule update --init --recursive. Inspect the Xcode project under source/original/. Read source/PROVENANCE.json.
+Select a textured patch in generated rectified images, run a horizontal block match and change baseline or focal length to calculate depth. This is new independent JavaScript/Canvas code in docs/, not a restored or ported historical application. The clean constant-shift example is new JavaScript, not an OpenCV/iOS port or a validation of the original Q-matrix/disparity scaling.
 
-Recorded November 2026 Xcode 16.1 check listed the project; simulator build had no compatible destination. Unsigned arm64 build failed on missing HelloGLKit/tile_floor.png. No current app build or device/numerical/benchmark result.
+Run https://twerdster.github.io/iphone-stereo-reconstruction/ or `python3 -m http.server 8000 --directory docs` from the repository root. No build, account, SDK or external service is required. Serve docs/ as the GitHub Pages source.
 
-iOS 5.1-era OpenCV/isgl3d/PowerVR/Bullet/GameKit APIs; isgl3d.h and resources missing. No current metric depth or disparity-scaling validation. No updated port or notebook. 561 tracked upstream files and 33 application source files are inventory counts.
+## Checks and review
 
-## Documentation maintenance
+updated/VALIDATION.json records 10 passing Chromium browser assertions for the new demo, including responsive layout checks; these are scoped interaction checks on synthetic/local examples. No original native build, sensor accuracy or physical-mobile/Safari/Firefox coverage was added. Two Claude CLI editorial passes reviewed the concise README and new-demo guide; useful wording and scope qualifications were checked against code and recovery records. Detailed review records are private.
 
-The 2026-11-12 documentation revision organizes the README around implementation, available source, setup, recorded checks and limits. It preserves historical visuals and links, with captions identifying historical figures. No runnable code, source provenance, pinned revisions, licenses or validation results changed in this revision. Recorded earlier tests were not rerun for the prose-only edits.
-
-Preserve original source and authorship. New ports belong under updated/ and require their own scope/validation. Do not infer a blanket license from recovery. Review this file and SKILL.md before every commit and synchronize changes to workflow, commands, validation or status. Check relative links and figure rendering; never describe inventory counts or component tests as full-application validation.
-
-Two actual Claude editorial review rounds on 2026-11-12 covered the README and related changed documentation, including context files, component guides and applicable algorithm/build notes or schematic text. Useful qualifications were checked against source, preserved project records and saved validation logs, then applied. Editorial review adds no runtime coverage.
-
-## Author correspondence recorded on 2026-11-13
-
-On 2026-11-12, Ron Slossberg permitted Aaron Wetzler to post the project on Aaron Wetzler's website and to use the project code, and welcomed a rewrite for modern hardware. Omer Shaked separately agreed to Aaron Wetzler using the code. No rewrite or successful current-device build has been completed here. These replies do not replace third-party terms or add a repository-wide license.
-
-This update changes documentation only. Source files, pinned revisions, assets, licenses and recorded validation results are unchanged. Private correspondence remains outside the repository. No new build, runtime or numerical validation was performed for this update.
-
-Two actual Claude editorial rounds on 2026-11-13 reviewed these author-correspondence notes and the related documentation/context changes. Minor factual and wording corrections were applied against the correspondence and existing repository records. This review and documentation update add no runtime validation.
+Preserve attribution, original bytes and licensing boundaries. New demo code has a scoped MIT license in docs/DEMO-LICENSE.txt; it does not cover historical materials or third-party dependencies. Correspondence, personal contact data and machine-specific setup details stay private. Before every commit review and synchronize this file and SKILL.md.

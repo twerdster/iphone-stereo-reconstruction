@@ -1,21 +1,15 @@
 # Maintaining iphone-stereo-reconstruction
 
-Read SUMMARY.md, then this file, then README.md. Inspect relevant code, original usage records and any updated/VALIDATION.json before changing technical claims.
+Read SUMMARY.md first, then this file, README.md, docs/RECOVERY.md, updated/README.md and applicable provenance records.
 
-## Repository workflow
+Preserve original source bytes, pinned revisions, figures, reports, slides, notices and student attribution. Keep new fixes or reconstructions separate and label them as updated work. Author responses do not create a blanket license or cover third-party terms. Keep correspondence, contact details and recovery secrets private.
 
-Clone with --recurse-submodules or git submodule update --init --recursive. Inspect the Xcode project under source/original/. Read source/PROVENANCE.json.
+The runnable new browser example is docs/index.html, docs/demo.js and docs/demo.css. Serve docs/ with a static HTTP server; GitHub Pages uses main:/docs. Keep links and the root README #updated anchor intact. The demo must remain project-specific and interactive, with visible synthetic/local-data labels. Its scoped MIT license excludes original materials.
 
-Treat these commands as scoped component or historical inspection procedures exactly as documented. No build/package step bundles this repository's wrapper documentation. Do not rerun missing-dependency/full-hardware applications merely to verify prose edits. When code changes, run the affected component checks and record actual environment, skips and limits.
+When changing the interaction, exercise its controls, meaningful result changes/rejections and downloads where present; for cross-tab messaging, verify an actual second tab. Check console errors, local requests and narrow-screen layout. Update updated/VALIDATION.json with actual results and limits, never invented counts or hardware claims. Synthetic examples and component assertions do not validate historical software or physical devices.
 
-## Preservation and claims
+README prose should briefly explain purpose, original material and current progress; keep lengthy setup, conversion, recovery and validation details in linked guides. Real Claude review is required when requested, and should be recorded only when it actually occurred.
 
-Keep original source bytes, submodule pins, provenance manifests, student/third-party credits and licenses intact. Do not edit upstream README files in submodules or historical source documentation to modernize the wrapper. Put any future implementation or dependency adaptation in a separately labeled updated/ area with its own tests.
+Keep source/original pinned at 69a76767b2ce74f7b580ddb7b81a43fbb1dd346b. The new synthetic JavaScript demo does not validate the historical manual Q-matrix disparity scaling.
 
-iOS 5.1-era OpenCV/isgl3d/PowerVR/Bullet/GameKit APIs; isgl3d.h and resources missing. No current metric depth or disparity-scaling validation. No updated port or notebook. 561 tracked upstream files and 33 application source files are inventory counts.
-
-Before each commit, review and synchronize SUMMARY.md and this file. Validate Markdown/relative links, retained figure paths and diff scope. Keep historical figures distinct from current output, and synthetic examples distinct from measurements. Explain what unit-test counts cover; do not convert source inspection or failed builds into compatibility, correctness or benchmark claims. Do not claim an external review unless it actually occurred.
-
-## Correspondence and permission records
-
-Keep the dated README/SUMMARY author-response record accurate and limited to the responding authors and stated scope. Author permission does not establish a repository-wide license or rights to third-party dependencies. Do not publish private contact details, raw correspondence or mail-service identifiers. Preserve source, notices and existing validation limits; record any further modernization separately and describe it as completed only after its implementation and checks are recorded.
+Before each commit review and synchronize SUMMARY.md and this file; check Markdown/relative links, original-file hashes, image rendering and staged whitespace. Use normal publication without rewriting preserved history.
